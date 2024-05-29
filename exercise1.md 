@@ -1,0 +1,47 @@
+Exercise 11.1 - Python
+
+Some linting tools for Python are:
+
+- Pylint
+- flake8
+- mypy
+
+Testing tools:
+
+- unittest
+- pytest
+
+Build tools:
+
+- PyBuilder
+- Poetry
+- SCons
+- Setuptools
+- Pipenv
+- tox
+- Buildout
+- PyOxidizer
+- Conda
+- PyInstaller
+- Streamlit
+- PlatformIO
+- Twine
+
+CI/CD tools:
+
+- TeamCity - Selfhosted and cloud
+- AWS CodePipeline - Cloud
+- Bamboo
+- GitLab CI/CD - Selfhosted and cloud
+- CircleCI
+- Travis CI
+- IBM UrbanCode 
+- Buildkite
+- Bitrise
+- Bitbucket
+- Semaphore
+
+Some CI/CD tools can be self-hosted (for example Jenkins, Gitlab and TeamCity). The choice between choosing cloud vs. self-hosted is mainly a choice between more work in addition to developing and being in control of your own systems and data.
+Self-hosting entails infrastructure management (server hardware, hypervisors, software, backups, etc.).
+A cloud provider that curently feels like a good choice might change for the worse in the future and there's a risk of platform lock-in due to overreliance on proprietary services.
+For small projects/teams a cloud solution might be more cost effective.
