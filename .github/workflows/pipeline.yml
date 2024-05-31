@@ -52,6 +52,7 @@ jobs:
     needs: [lint-test, playwright-test]
     concurrency: deploy-group
     if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event.commits.*.message !== '#skip' }}
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
@@ -65,6 +66,7 @@ jobs:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
   tag-release:
     if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event.commits.*.message !== '#skip' }}
     runs-on: ubuntu-22.04
     permissions:
       contents: write
