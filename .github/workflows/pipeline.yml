@@ -84,6 +84,7 @@ jobs:
           DEFAULT_BUMP: patch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   a_test_job:
+    if: ${{ github.event_name == 'push' && !contains(github.event.commits.*.message, '#skip') }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
