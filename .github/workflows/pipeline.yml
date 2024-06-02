@@ -62,10 +62,12 @@ jobs:
       - name: Build Failure
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
+        env:
+          COMMITS: ${{ toJson(github.event.commits) }}
         with:
-            severity: error
-            details: Build Failed!
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          severity: error
+          details: Build Failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Deploy
         run: flyctl deploy --remote-only
         env:
