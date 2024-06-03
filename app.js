@@ -4,6 +4,10 @@ const app = express()
 // get the port from env variable
 const PORT = process.env.PORT || 5000
 
+app.get('/', (req, res) => {
+  res.status(404).send('404 not found')
+})
+
 app.use(express.static('dist'))
 
 app.get('/version', (req, res) => {
